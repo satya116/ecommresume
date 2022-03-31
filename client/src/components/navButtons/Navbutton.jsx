@@ -24,22 +24,28 @@ const Navbutton = () => {
     <Box style={{ display: "flex", margin: "0 5% 0 auto" }}>
        {
          accountu ? <Profile accountu={accountu} setAccountu={setAccountu} />  : <Link onClick={(e)=>setOpen(true)} to={'/'} style={{ color: "white", textDecoration: "none" }} >
-         <Button style={{ backgroundColor: "white", color: "red", height: "inherit" }} variant='contained'>
+         <Button style={{ backgroundColor: "white", color: "#045700", height: "inherit", borderRadius: 0, marginRight: 50, }} variant='contained'>
               
               Login
   
           </Button></Link>
        }
 
+       <Box style={{ display: "flex", justifyContent: "space-around", width: 200, alignItems: 'center' }}>
+
+      
+
         <Link style={{ color: "white", textDecoration: "none" }} to={'/'}> <Typography> More</Typography> </Link>
 
         <Link to={'/cart'} style={{ color: "white", textDecoration: "none" }}>
            
-            <Typography>   <ShoppingCartIcon  /> Cart </Typography>
+            <Typography>   <ShoppingCartIcon   /> Cart </Typography>
         </Link>
 
+        </Box>
+
         <LoginDialog open={open} setOpen={setOpen} setAccountu={setAccountu} />
-        
+       
 
         
     </Box>

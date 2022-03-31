@@ -1,59 +1,46 @@
-import { AppBar, Toolbar, Typography } from '@mui/material'
-import React from 'react'
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import React from "react";
 
-import { makeStyles } from '@mui/styles'
-import SearchBar from '../../components/searchBar/SearchBar'
-import Navbutton from '../../components/navButtons/Navbutton'
+import { makeStyles } from "@mui/styles";
+// import SearchBar from "../../components/searchBar/SearchBar";
+import Navbutton from "../../components/navButtons/Navbutton";
 
 const useStyle = makeStyles({
 
-  navbar:{
-    backgroundColor: "green",
+  toolbaru: {
+    backgroundColor: "#045700",
+    height: 65,
   },
-  toolbaru:{
-    backgroundColor: "blue"
-
-  },
-  brandName:{
-    
-    color: "white",
-    letterSpacing: "1px",
-    marginLeft: 33,
-
-  }
-   
-
-})
+});
 
 const NavbarContainer = () => {
-
-  const classes = useStyle()
+  const classes = useStyle();
 
   return (
     <>
+      <AppBar style={{ height: 65, }} >
+        <Toolbar className={classes.toolbaru}>
+          <Typography
+            style={{
+              color: "white",
+              marginLeft: 90,
+              cursor: "pointer",
+              fontSize: 25,
+              fontWeight: 700,
+              letterSpacing: "2px",
+            }}
+          >
+            {" "}
+            Satyakart{" "}
+          </Typography>
 
-    <AppBar className={classes.navbar}>
-      <Toolbar className={classes.toolbaru}>
-        <Typography className={classes.brandName}> MyCart.com </Typography>
+          {/* <SearchBar /> */}
 
-        <SearchBar />
-
-        <Navbutton />
-
-      </Toolbar>
-    </AppBar>
-
-
-
-
-
-
-
-
-
-
+          <Navbutton />
+        </Toolbar>
+      </AppBar>
     </>
-  )
-}
+  );
+};
 
-export default NavbarContainer
+export default NavbarContainer;
